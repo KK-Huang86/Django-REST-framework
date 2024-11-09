@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "djanog-rest-framework"
+version = "0.1.0"
+description = ""
+authors = ["Kk <iankk0806@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+djangorestframework = "^3.15.2"
+pre-commit = "^4.0.1"
+
+
+[tool.poetry.group.dev.dependencies]
+commitizen = "^3.30.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
