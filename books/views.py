@@ -22,14 +22,14 @@ class BookViewSet(viewsets.ModelViewSet):
             self.permission_classes = [IsAuthenticated]
         return [permission() for permission in self.permission_classes]
 
-    # [GET] api/shares/
+    # [GET] api/
     def list(self, request, **kwargs):
         users = Book.objects.all()
         serializer = BookSerializer(users, many=True)
 
         return Response(serializer.data, status=status.HTTP_200_OK)
 
-    # [POST] api/shares/
+    # [POST] api/
     @permission_classes([IsAuthenticated])
     def create(self, request, **kwargs):
         name = request.data.get("name")
