@@ -32,8 +32,8 @@ class BookViewSet(viewsets.ModelViewSet):
     # [POST] api/
     @permission_classes([IsAuthenticated])
     def create(self, request, **kwargs):
-        name = request.data.get("name")
-        users = Book.objects.create(name=name)
+        name = request.data.get("book_name")
+        users = Book.objects.create(book_name=name)
         serializer = BookSerializer(users)
 
         return Response(serializer.data, status=status.HTTP_201_CREATED)
